@@ -25,4 +25,4 @@ $("#timeColumn09").html('09:00:00')
     // moment('09:00:00').format('hh:mm:ss'))
 // }
 
-// time()
+time()
