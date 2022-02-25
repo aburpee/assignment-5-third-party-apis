@@ -25,4 +25,9 @@ $('.save-btn').on('click', function() {
     let userEntry = $(this).siblings('input').val()
     let timeBlock = $(this).siblings('input').attr('id')
     console.log(userEntry, timeBlock)
+    localStorage.setItem(timeBlock, userEntry)
 })
+
+for (let i = 9; i <=17; i++) {
+    $('#'+i).val(localStorage.getItem(i))
+}
