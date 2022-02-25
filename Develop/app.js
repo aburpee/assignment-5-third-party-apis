@@ -1,15 +1,3 @@
-$("#timeColumn09").click(function(){
-    console.log('i clicked')
-})
-
-$("#noteColumn09").click(function(){
-    console.log("i added a note")
-})
-
-$("#saveColumn09").click(function(){
-    console.log("i saved a note")
-})
-
 let renderClock = function() {
     $('#currentDay').html(moment().format('MMMM Do YYYY, h:mm:ss a'))
 }
@@ -27,7 +15,16 @@ $('.save-btn').on('click', function() {
     console.log(userEntry, timeBlock)
     localStorage.setItem(timeBlock, userEntry)
 })
-
+let currentHour = moment().hour()
+console.log(currentHour)
 for (let i = 9; i <=17; i++) {
     $('#'+i).val(localStorage.getItem(i))
+    if (currentHour > i) {
+        $('#'+i).addClass('bg-danger')
+    } else if (currentHour == i) {
+        $('#'+i).addClass('bg-warning')
+    } else {
+        $('#'+i).addClass('bg-primary')
+    }
 }
+
